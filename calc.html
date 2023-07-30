@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sts.css">
+    <title>Try this Calculator!</title>
+</head>
+    <body>
+        <h1>Simple Calculator</h1>
+        <div class="cont">
+             <div class="calc">
+                <input type="text" placeholder="0" id="sc">
+                <button onclick="cl()">Cl</button>
+                <button onclick="del()">DEL</button>
+                <button onclick="disp('1')">1</button>
+                <button onclick="disp('2')">2</button>
+                <button onclick="disp('3')">3</button>
+                <button onclick="disp('4')">4</button>
+                <button onclick="disp('5')">5</button>
+                <button onclick="disp('6')">6</button>
+                <button onclick="disp('7')">7</button>
+                <button onclick="disp('8')">8</button>
+                <button onclick="disp('9')">9</button>
+                <button onclick="disp('0')">0</button>
+                <button onclick="disp('/')">/</button>
+                <button onclick="disp('*')">*</button>
+                <button onclick="disp('-')">-</button>
+                <button onclick="disp('+')">+</button>
+                <button onclick="val()" class="dim">=</button>
+             </div>
+        </div>
+
+        <script>
+    let outputScreen=document.getElementById("sc");
+ function disp(n){
+    outputScreen.value+=n;
+}
+function val(){
+   try{
+    outputScreen.value=eval(outputScreen.value);
+}
+catch(err){
+    alert("invalid");
+}
+   
+}
+
+function cl(){
+outputScreen.value= "";
+}
+function del(){
+    outputScreen.value=outputScreen.value.slice(0,-1);
+}
+        </script>
+
+    </body>
+
+
+</html>
